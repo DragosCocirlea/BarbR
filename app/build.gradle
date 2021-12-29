@@ -44,4 +44,5 @@ dependencies {
     implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
     implementation 'com.github.kittinunf.fuel:fuel-android:2.3.1'
     implementation 'com.github.kittinunf.fuel:fuel-json:2.3.1'
+    implementation 'com.aurelhubert:ahbottomnavigation:2.3.4'
 }
