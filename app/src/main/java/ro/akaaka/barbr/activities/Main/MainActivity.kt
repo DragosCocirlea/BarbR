@@ -10,18 +10,23 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),
-    HomeFragment.OnFragmentInteractionListener {
+    HomeFragment.OnFragmentInteractionListener,
+    SearchFragment.OnFragmentInteractionListener{
 
     override fun onFragmentInteraction(uri: Uri) {
     }
 
     lateinit var homeFragment : HomeFragment
+    lateinit var searchFragment: SearchFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         homeFragment = HomeFragment.newInstance()
+        searchFragment = SearchFragment.newInstance()
+
 
         val bottomNavigation = bottom_navigation
 
@@ -50,7 +55,11 @@ class MainActivity : AppCompatActivity(),
                         .replace(R.id.container, homeFragment)
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
                         .commit()
-                    2 -> Toast.makeText(this, "Search fragment", Toast.LENGTH_SHORT).show()
+                    2 -> supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.container, searchFragment)
+                            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                            .commit()
                 }
 
             true
