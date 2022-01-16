@@ -11,11 +11,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),
     HomeFragment.OnFragmentInteractionListener,
-    SearchFragment.OnFragmentInteractionListener{
+    ProfileFragment.OnFragmentInteractionListener,
+    SearchFragment.OnFragmentInteractionListener {
 
     override fun onFragmentInteraction(uri: Uri) {
     }
 
+    lateinit var profileFragment : ProfileFragment
     lateinit var homeFragment : HomeFragment
     lateinit var searchFragment: SearchFragment
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        profileFragment = ProfileFragment.newInstance()
         homeFragment = HomeFragment.newInstance()
         searchFragment = SearchFragment.newInstance()
 
@@ -49,7 +52,11 @@ class MainActivity : AppCompatActivity(),
         bottom_navigation.setOnTabSelectedListener { position, wasSelected ->
             if (!wasSelected)
                 when (position) {
-                    0 -> Toast.makeText(this, "Account fragment", Toast.LENGTH_SHORT).show()
+                    0 -> supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.container, profileFragment)
+                            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                            .commit()
                     1 -> supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.container, homeFragment)

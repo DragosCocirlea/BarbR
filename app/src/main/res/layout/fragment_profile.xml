@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".activities.Main.ProfileFragment"
+        android:background="#E8F5E9"
+>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/profile_layout">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_username"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="40dp"
+            />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_bundle_email"
+                    android:layout_below="@id/profile_username"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_username">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/email"
+                        android:layout_marginLeft="20dp"
+                        android:drawablePadding="20dp"
+                        android:textSize="18sp"
+                        android:text="Email address"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/profile_email"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_bundle_cellphone"
+                    android:layout_below="@id/profile_bundle_email"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_bundle_email">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/phone"
+                        android:layout_marginLeft="20dp"
+                        android:drawablePadding="20dp"
+                        android:textSize="18sp"
+
+                        android:text="Cellphone number"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/profile_cellphone"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_bundle_birthday"
+                    android:layout_below="@id/profile_bundle_cellphone"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_bundle_cellphone">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/cake"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="18sp"
+                        android:drawablePadding="20dp"
+                        android:text="Birthday"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/profile_birthday"
+                        android:layout_marginTop="8dp"
+                        android:textSize="20sp"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttons_bundle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical">
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_edit_account"
+                android:background="@drawable/rounded_button"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_above="@id/button_delete_account"
+                android:text="Edit account"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_delete_account"
+                android:background="@drawable/rounded_button"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_above="@id/button_logout"
+                android:text="Delete account"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_logout"
+                android:background="@drawable/rounded_button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal|bold"
+                android:layout_marginTop="10dp"
+                android:text="SIGN OUT"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
