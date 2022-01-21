@@ -1,6 +1,6 @@
 # BarbR - Barbershop Reservation App
 
-## Team
+## Team - Mobile Computing SCPD2
 
 - Andrei Cherechesu - SCPD2
 - Dragos Cocirlea - SCPD2
